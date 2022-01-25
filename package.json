@@ -1,5 +1,6 @@
 {
   "name": "fe-assessment",
+  "homepage": "https://boutchersj.github.io/fe-assessment",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
