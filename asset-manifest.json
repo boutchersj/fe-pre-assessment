@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fe-assessment/static/css/main.abd64e84.css",
+    "main.js": "/fe-assessment/static/js/main.2d10309d.js",
+    "index.html": "/fe-assessment/index.html",
+    "main.abd64e84.css.map": "/fe-assessment/static/css/main.abd64e84.css.map",
+    "main.2d10309d.js.map": "/fe-assessment/static/js/main.2d10309d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd64e84.css",
+    "static/js/main.2d10309d.js"
+  ]
+}
