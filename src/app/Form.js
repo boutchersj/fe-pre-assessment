@@ -1,5 +1,5 @@
 import axios from 'axios';
-import confetti from 'confetti-js';
+import ConfettiGenerator from 'confetti-js';
 import React, { useState } from 'react';
 import Input from './Input';
 import OccupationPicker from './OccupationPicker';
@@ -29,8 +29,10 @@ function Form() {
       "state": formInputValues.state
     })
     .then(() => {
-      alert('Your submission was successful!');
-      confetti.startConfetti();
+      alert('Your submission was successful! 🎉');
+      const confettiSettings = { target: 'my-canvas' };
+      const confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
     })
     .catch((err) => {
       // Credit: https://axios-http.com/docs/handling_errors

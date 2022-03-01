@@ -10,6 +10,7 @@ function App() {
         <h3>Pre-assessment task - User form</h3>
         <p>Steven Boutcher</p>
       </header>
+      <canvas id="my-canvas"></canvas>
       <main>
         <Form />
       </main>
