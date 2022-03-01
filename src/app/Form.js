@@ -14,6 +14,37 @@ function Form() {
     state: ''
   });
 
+  let occupations = [];
+  let states = [];
+
+  axios.get('https://frontend-take-home.fetchrewards.com/form')
+    .then((res) => {
+      console.log(res);
+
+      occupations = res.occupations;
+      states = res.states;
+    })
+    .catch((err) => {
+      // Credit: https://axios-http.com/docs/handling_errors
+
+      if (err.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(err.response.data);
+        console.log(err.response.status);
+        console.log(err.response.headers);
+      } else if (err.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(err.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', err.message);
+      }
+      console.log(err.config);
+    })
+
   function handleChange(e) {
     setFormInputValues({...formInputValues,
       [e.target.name]: e.target.value
@@ -28,7 +59,9 @@ function Form() {
       "occupation": formInputValues.occupation,
       "state": formInputValues.state
     })
-    .then(() => {
+    .then((res) => {
+      console.log(res);
+      // Include a fun celebration
       alert('Your submission was successful! 🎉');
       const confettiSettings = { target: 'my-canvas' };
       const confetti = new ConfettiGenerator(confettiSettings);
