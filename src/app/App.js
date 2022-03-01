@@ -1,6 +1,8 @@
 import './App.css';
+import Form from './Form';
 
 function App() {
+
   return (
     <div className="App">
       <header>
@@ -9,7 +11,7 @@ function App() {
         <p>Steven Boutcher</p>
       </header>
       <main>
-        <p>User form goes here</p>
+        <Form />
       </main>
     </div>
   );
