@@ -1,3 +1,5 @@
+import axios from 'axios';
+import confetti from 'confetti-js';
 import React, { useState } from 'react';
 import Input from './Input';
 import OccupationPicker from './OccupationPicker';
@@ -19,8 +21,38 @@ function Form() {
   }
 
   function submitForm() {
+    axios.post('https://frontend-take-home.fetchrewards.com/form', {
+      "name": formInputValues.fullName,
+      "email": formInputValues.email,
+      "password": formInputValues.password,
+      "occupation": formInputValues.occupation,
+      "state": formInputValues.state
+    })
+    .then(() => {
+      alert('Your submission was successful!');
+      confetti.startConfetti();
+    })
+    .catch((err) => {
+      // Credit: https://axios-http.com/docs/handling_errors
 
-  };
+      if (err.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        console.log(err.response.data);
+        console.log(err.response.status);
+        console.log(err.response.headers);
+      } else if (err.request) {
+        // The request was made but no response was received
+        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+        // http.ClientRequest in node.js
+        console.log(err.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', err.message);
+      }
+      console.log(err.config);
+    });
+  }
 
   return (
     <form>

@@ -2,6 +2,8 @@ import React from 'react';
 
 function StatePicker(props) {
   return (
+    // Credit: https://www.freeformatter.com/usa-state-list-html-select.html
+
     <select name="state" onChange={props.handleChange} value={props.value}>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
