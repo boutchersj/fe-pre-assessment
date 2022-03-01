@@ -1,6 +1,6 @@
 import axios from 'axios';
 import ConfettiGenerator from 'confetti-js';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from './Input';
 import OccupationPicker from './OccupationPicker';
 import StatePicker from './StatePicker';
@@ -17,33 +17,36 @@ function Form() {
   let occupations = [];
   let states = [];
 
-  axios.get('https://frontend-take-home.fetchrewards.com/form')
-    .then((res) => {
-      console.log(res);
+  // Grab the options data once when the form loads
+  useEffect(() => {
+    axios.get('https://frontend-take-home.fetchrewards.com/form')
+      .then((res) => {
+        console.log(res);
 
-      occupations = res.occupations;
-      states = res.states;
-    })
-    .catch((err) => {
-      // Credit: https://axios-http.com/docs/handling_errors
+        occupations = res.data.occupations;
+        states = res.data.states;
+      })
+      .catch((err) => {
+        // Credit: https://axios-http.com/docs/handling_errors
 
-      if (err.response) {
-        // The request was made and the server responded with a status code
-        // that falls out of the range of 2xx
-        console.log(err.response.data);
-        console.log(err.response.status);
-        console.log(err.response.headers);
-      } else if (err.request) {
-        // The request was made but no response was received
-        // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-        // http.ClientRequest in node.js
-        console.log(err.request);
-      } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log('Error', err.message);
-      }
-      console.log(err.config);
-    })
+        if (err.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(err.response.data);
+          console.log(err.response.status);
+          console.log(err.response.headers);
+        } else if (err.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(err.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', err.message);
+        }
+        console.log(err.config);
+      })
+  }, [])
 
   function handleChange(e) {
     setFormInputValues({...formInputValues,
