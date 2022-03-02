@@ -1,5 +1,5 @@
 import axios from 'axios';
-import ConfettiGenerator from 'confetti-js';
+// import ConfettiGenerator from 'confetti-js';
 import React, { useEffect, useState } from 'react';
 import Input from './Input';
 import OccupationPicker from './OccupationPicker';
