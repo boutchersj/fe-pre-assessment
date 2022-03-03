@@ -55,7 +55,7 @@ function Form() {
   }
 
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <Input>
         <label htmlFor="fullName">Full Name</label>
         <input name="fullName" onChange={handleChange} value={formInputValues.fullName} type="text" autoComplete="on" required />
@@ -76,7 +76,7 @@ function Form() {
         <label htmlFor="state">State</label>
         <StatePicker handleChange={handleChange} value={formInputValues.state} options={states} required />
       </Input>
-      <input type="submit" onClick={submitForm}/>
+      <input type="submit" />
     </form>
   );
 }
