@@ -3,7 +3,7 @@ import React from 'react';
 function OccupationPicker(props) {
   const occupationOptions = props.options.map(occupation => {
     return (
-      <option value={occupation}>{occupation}</option>
+      <option key={occupation} value={occupation}>{occupation}</option>
     );
   });
   return (

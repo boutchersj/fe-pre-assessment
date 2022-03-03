@@ -58,23 +58,23 @@ function Form() {
     <form>
       <Input>
         <label htmlFor="fullName">Full Name</label>
-        <input name="fullName" onChange={handleChange} value={formInputValues.fullName} type="text"></input>
+        <input name="fullName" onChange={handleChange} value={formInputValues.fullName} type="text" autoComplete="on" required />
       </Input>
       <Input>
         <label htmlFor="email">Email</label>
-        <input name="email" onChange={handleChange} value={formInputValues.email} type="email"></input>
+        <input name="email" onChange={handleChange} value={formInputValues.email} type="email" autoComplete="on" required />
       </Input>
       <Input>
         <label htmlFor="password">Password</label>
-        <input name="password" onChange={handleChange} value={formInputValues.password} type="password"></input>
+        <input name="password" onChange={handleChange} value={formInputValues.password} type="password" autoComplete="on" required />
       </Input>
       <Input>
         <label htmlFor="occupation">Occupation</label>
-        <OccupationPicker handleChange={handleChange} value={formInputValues.occupation} options={occupations} />
+        <OccupationPicker handleChange={handleChange} value={formInputValues.occupation} options={occupations} required />
       </Input>
       <Input>
         <label htmlFor="state">State</label>
-        <StatePicker handleChange={handleChange} value={formInputValues.state} options={states} />
+        <StatePicker handleChange={handleChange} value={formInputValues.state} options={states} required />
       </Input>
       <input type="submit" onClick={submitForm}/>
     </form>
