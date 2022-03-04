@@ -9,9 +9,7 @@ body {
 }
 
 .app-wrapper {
-  justify-content: flex-start;
-  text-align: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   margin: 0;
 }
@@ -22,9 +20,12 @@ body {
   width: 100%;
   height: 100%;
   margin: 0;
-  border: 1px solid orange;
 }
 
 .input-wrapper {
   margin: 1em 0;
+}
+
+input,select {
+  width: 100%;
 }

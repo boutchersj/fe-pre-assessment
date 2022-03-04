@@ -34,6 +34,7 @@ function Form() {
 
   function submitForm(e) {
     e.preventDefault();
+
     const formData = {
       "name": formInputValues.fullName,
       "email": formInputValues.email,
@@ -44,6 +45,7 @@ function Form() {
     axios.post('https://frontend-take-home.fetchrewards.com/form', formData)
       .then((res) => {
         console.log(res);
+
         // Include a fun celebration
         alert('Your submission was successful! 🎉');
         const confettiSettings = { target: 'my-canvas' };
