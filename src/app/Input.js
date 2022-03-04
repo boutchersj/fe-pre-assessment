@@ -1,15 +1,8 @@
 import React from 'react';
 
 function Input(props) {
-  const inputWrapperStyles = { 
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
-  };
-
   return (
-    <div style={inputWrapperStyles}>
+    <div className="input-wrapper flex-column">
       {props.children}
     </div>
   );

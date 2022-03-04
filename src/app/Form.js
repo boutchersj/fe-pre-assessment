@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import ConfettiGenerator from 'confetti-js';
+import ConfettiGenerator from 'confetti-js';
 import React, { useEffect, useState } from 'react';
 import Input from './Input';
 import OccupationPicker from './OccupationPicker';
@@ -32,26 +32,25 @@ function Form() {
     })
   }
 
-  function submitForm() {
-    console.log(formInputValues);
-    console.log(formInputValues.occupation);
-
-    axios.post('https://frontend-take-home.fetchrewards.com/form', {
+  function submitForm(e) {
+    e.preventDefault();
+    const formData = {
       "name": formInputValues.fullName,
       "email": formInputValues.email,
       "password": formInputValues.password,
       "occupation": formInputValues.occupation,
       "state": formInputValues.state
-    })
-    .then((res) => {
-      console.log(res);
-      // Include a fun celebration
-      // alert('Your submission was successful! 🎉');
-      // const confettiSettings = { target: 'my-canvas' };
-      // const confetti = new ConfettiGenerator(confettiSettings);
-      // confetti.render();
-    })
-    .catch((err) => { console.log(err) });
+    };
+    axios.post('https://frontend-take-home.fetchrewards.com/form', formData)
+      .then((res) => {
+        console.log(res);
+        // Include a fun celebration
+        alert('Your submission was successful! 🎉');
+        const confettiSettings = { target: 'my-canvas' };
+        const confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+      })
+      .catch((err) => { console.log(err) });
   }
 
   return (
