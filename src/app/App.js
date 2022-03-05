@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import axios from 'axios';
-import './App.css';
 import ConfettiGenerator from 'confetti-js';
 import FullName from './fields/FullName';
 import Email from './fields/Email';

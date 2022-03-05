@@ -1,4 +1,5 @@
 import React from 'react';
+import NavLinks from '../NavLinks';
 import { Link } from 'react-router-dom';
 import Input from '../Input';
 
@@ -7,10 +8,10 @@ function Email(props) {
     <Input>
       <label htmlFor="email">Email</label>
       <input name="email" onChange={props.handleChange} value={props.formInputValues.email} type="email" autoComplete="on" required />
-      <section>
-          <Link to='/' className='btn-nav'>Previous</Link>
-          <Link to='/password' className='btn-nav'>Next</Link>
-      </section>
+      <NavLinks>
+        <Link to='/' className='btn-nav'>Previous</Link>
+        <Link to='/password' className='btn-nav'>Next</Link>
+      </NavLinks>
     </Input>
   );
 }
