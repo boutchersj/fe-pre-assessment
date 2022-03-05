@@ -1,9 +1,11 @@
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ConfettiGenerator from 'confetti-js';
-import React, { useEffect, useState } from 'react';
-import Input from './Input';
-import OccupationPicker from './OccupationPicker';
-import StatePicker from './StatePicker';
+import FullName from './fields/FullName';
+import Email from './fields/Email';
+import Password from './fields/Password';
+import Occupation from './fields/Occupation';
+import State from './fields/State';
 
 function Form() {
   const [formInputValues, setFormInputValues] = useState({
@@ -56,28 +58,13 @@ function Form() {
   }
 
   return (
-    <form onSubmit={submitForm}>
-      <Input>
-        <label htmlFor="fullName">Full Name</label>
-        <input name="fullName" onChange={handleChange} value={formInputValues.fullName} type="text" autoComplete="on" required />
-      </Input>
-      <Input>
-        <label htmlFor="email">Email</label>
-        <input name="email" onChange={handleChange} value={formInputValues.email} type="email" autoComplete="on" required />
-      </Input>
-      <Input>
-        <label htmlFor="password">Password</label>
-        <input name="password" onChange={handleChange} value={formInputValues.password} type="password" autoComplete="on" required />
-      </Input>
-      <Input>
-        <label htmlFor="occupation">Occupation</label>
-        <OccupationPicker handleChange={handleChange} value={formInputValues.occupation} options={occupations} required />
-      </Input>
-      <Input>
-        <label htmlFor="state">State</label>
-        <StatePicker handleChange={handleChange} value={formInputValues.state} options={states} required />
-      </Input>
-      <input type="submit" />
+    <form>
+      <FullName formInputValues={formInputValues} handleChange={handleChange} />
+      <Email formInputValues={formInputValues} handleChange={handleChange} />
+      <Password formInputValues={formInputValues} handleChange={handleChange} />
+      <Occupation formInputValues={formInputValues} handleChange={handleChange} options={occupations} />
+      <State formInputValues={formInputValues} handleChange={handleChange} options={states} />
+      <input type="submit" onClick={submitForm} />
     </form>
   );
 }
