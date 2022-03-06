@@ -8,7 +8,7 @@ function State(props) {
   return (
     <Input>
       <label htmlFor="state">State</label>
-      <StatePicker handleChange={props.handleChange} value={props.formInputValues.state} options={props.options} required />
+      <StatePicker handleChange={props.handleChange} value={props.formInputValues.state} options={props.options} />
       <NavLinks>
         <Link to='/occupation' className='btn-nav'>Previous</Link>
         <Link to='/review' className='btn-nav'>Next</Link>
