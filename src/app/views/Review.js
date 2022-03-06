@@ -14,7 +14,7 @@ function Review(props) {
       <p>State: {state}</p>
       <NavLinks>
         <Link to='/state' className='btn-nav'>Previous</Link>
-        <Link to='/' className='btn-nav' onClick={props.submitForm}>Submit</Link>
+        <Link to='/success' className='btn-nav' onClick={props.submitForm}>Submit</Link>
       </NavLinks>
     </section>
   )
