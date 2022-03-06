@@ -37,6 +37,7 @@ function Review(props) {
       })
       .catch((err) => { console.log(err) });
   }
+
   return (
     <section>
       <h1>Please ensure your information is correct before submitting</h1>
