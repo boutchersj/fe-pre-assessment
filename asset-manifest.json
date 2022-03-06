@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/fe-assessment/static/css/main.dc9462fa.css",
-    "main.js": "/fe-assessment/static/js/main.343efebb.js",
+    "main.js": "/fe-assessment/static/js/main.bbc35993.js",
     "index.html": "/fe-assessment/index.html",
     "main.dc9462fa.css.map": "/fe-assessment/static/css/main.dc9462fa.css.map",
-    "main.343efebb.js.map": "/fe-assessment/static/js/main.343efebb.js.map"
+    "main.bbc35993.js.map": "/fe-assessment/static/js/main.bbc35993.js.map"
   },
   "entrypoints": [
     "static/css/main.dc9462fa.css",
-    "static/js/main.343efebb.js"
+    "static/js/main.bbc35993.js"
   ]
 }
