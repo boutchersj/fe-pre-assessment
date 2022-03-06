@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLinks from './NavLinks';
+import NavLinks from '../NavLinks';
 import { Link } from 'react-router-dom';
 
 function Review(props) {
@@ -12,9 +12,9 @@ function Review(props) {
       <p>Password: {password}</p>
       <p>Occupation: {occupation}</p>
       <p>State: {state}</p>
-      <input type="submit" onClick={props.submitForm} value="Submit" />
       <NavLinks>
         <Link to='/state' className='btn-nav'>Previous</Link>
+        <Link to='/' className='btn-nav' onClick={props.submitForm}>Submit</Link>
       </NavLinks>
     </section>
   )

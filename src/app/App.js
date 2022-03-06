@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import './App.css';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import axios from 'axios';
 import ConfettiGenerator from 'confetti-js';
-import FullName from './fields/FullName';
-import Email from './fields/Email';
-import Password from './fields/Password';
-import Occupation from './fields/Occupation';
-import State from './fields/State';
-import Review from './Review';
+import FullName from './views/FullName';
+import Email from './views/Email';
+import Password from './views/Password';
+import Occupation from './views/Occupation';
+import State from './views/State';
+import Review from './views/Review';
 
 function App() {
   const [formInputValues, setFormInputValues] = useState({
