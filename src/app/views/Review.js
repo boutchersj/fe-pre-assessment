@@ -10,10 +10,11 @@ function Review(props) {
   let navigate = useNavigate();
 
   function successRedirect() {
-    navigate('/success');
+    navigate('/success', () => props.setWasRedirected(false));
     const confettiSettings = { target: 'my-canvas' };
     const confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
+    setTimeout(() => confetti.clear(), 5000);
   }
 
   function submitForm(e) {
