@@ -39,7 +39,7 @@ function Review(props) {
   }
 
   return (
-    <section>
+    <section id='review-section'>
       <h1>Please ensure your information is correct before submitting</h1>
       <p>Full Name: {fullName}</p>
       <p>Email: {email}</p>
