@@ -2,13 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import axios from 'axios';
-import FullName from './views/FullName';
-import Email from './views/Email';
-import Password from './views/Password';
-import Occupation from './views/Occupation';
-import State from './views/State';
-import Review from './views/Review';
-import Success from './views/Success';
+import { FullName, Email, Password, Occupation, State, Review, Success } from './views/views';
 
 function App() {
   const [formInputValues, setFormInputValues] = useState({
