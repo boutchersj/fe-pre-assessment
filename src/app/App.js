@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { HashRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import axios from 'axios';
-import ConfettiGenerator from 'confetti-js';
 import FullName from './views/FullName';
 import Email from './views/Email';
 import Password from './views/Password';
 import Occupation from './views/Occupation';
 import State from './views/State';
 import Review from './views/Review';
+import Success from './views/Success';
 
 function App() {
   const [formInputValues, setFormInputValues] = useState({
@@ -21,6 +21,7 @@ function App() {
 
   const [occupations, setOccupations] = useState([]);
   const [states, setStates] = useState([]);
+  const [wasRedirected, setWasRedirected] = useState(false);
 
   useEffect(() => {
     axios.get('https://frontend-take-home.fetchrewards.com/form')
@@ -37,41 +38,19 @@ function App() {
     })
   }
 
-  function submitForm(e) {
-    e.preventDefault();
-
-    const formData = {
-      "name": formInputValues.fullName,
-      "email": formInputValues.email,
-      "password": formInputValues.password,
-      "occupation": formInputValues.occupation,
-      "state": formInputValues.state
-    };
-    axios.post('https://frontend-take-home.fetchrewards.com/form', formData)
-      .then((res) => {
-        console.log(res);
-
-        // Include a fun celebration
-        alert('Your submission was successful! 🎉');
-        const confettiSettings = { target: 'my-canvas' };
-        const confetti = new ConfettiGenerator(confettiSettings);
-        confetti.render();
-      })
-      .catch((err) => { console.log(err) });
-  }
-
   return (
     <div className="app-wrapper flex-column">
       <canvas id="my-canvas"></canvas>
       <main className="content flex-column">
-        <Router>   
+        <Router>
           <Routes>
             <Route exact path='/' element={<FullName formInputValues={formInputValues} handleChange={handleChange} />} />
             <Route path="/email" element={<Email formInputValues={formInputValues} handleChange={handleChange} />} />
             <Route path='/password' element={<Password formInputValues={formInputValues} handleChange={handleChange} />} />
             <Route path='/occupation' element={<Occupation formInputValues={formInputValues} handleChange={handleChange} options={occupations} />} />
             <Route path='/state' element={<State formInputValues={formInputValues} handleChange={handleChange} options={states} />} />
-            <Route path='/review' element={<Review formInputValues={formInputValues} submitForm={submitForm} />} />
+            <Route path='/review' element={<Review formInputValues={formInputValues} setWasRedirected={setWasRedirected} />} />
+            <Route path='/success' element={wasRedirected ? <Success /> : <Navigate to='/' />} />
           </Routes>
         </Router>
       </main>
