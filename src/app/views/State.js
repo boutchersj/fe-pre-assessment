@@ -10,8 +10,8 @@ function State(props) {
       <label htmlFor="state">State</label>
       <StatePicker data-testid='state-field' handleChange={props.handleChange} value={props.formInputValues.state} options={props.options} />
       <NavLinks>
-        <Link to='/occupation' className='btn-nav' data-testid='state-prev'>Previous</Link>
-        <Link to='/review' className='btn-nav' data-testid='state-next'>Next</Link>
+        <Link to='/occupation' className='btn-nav' data-testid='state-prev' style={{visibility: props.formInputValues.state ? 'visible' : 'hidden' }}>Previous</Link>
+        <Link to='/review' className='btn-nav' data-testid='state-next' style={{visibility: props.formInputValues.state ? 'visible' : 'hidden' }}>Next</Link>
       </NavLinks>
     </Input>
   );

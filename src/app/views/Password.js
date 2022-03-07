@@ -17,8 +17,8 @@ function Password(props) {
         <input data-testid='password-visibility-checkbox' name='password-visibility-checkbox' type="checkbox" onClick={changePasswordVisibility} />
       </Input>
       <NavLinks>
-        <Link to='/email' className='btn-nav' data-testid='password-prev'>Previous</Link>
-        <Link to='/occupation' className='btn-nav' data-testid='password-next'>Next</Link>
+        <Link to='/email' className='btn-nav' data-testid='password-prev' style={{visibility: props.formInputValues.password ? 'visible' : 'hidden' }}>Previous</Link>
+        <Link to='/occupation' className='btn-nav' data-testid='password-next' style={{visibility: props.formInputValues.password ? 'visible' : 'hidden' }}>Next</Link>
       </NavLinks>
     </Input>
   );
