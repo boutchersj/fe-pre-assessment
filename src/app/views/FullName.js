@@ -9,7 +9,7 @@ function FullName(props) {
         <label htmlFor="fullName">Full Name</label>
         <input data-testid='fullName-field' name="fullName" onChange={props.handleChange} value={props.formInputValues.fullName} type="text" autoComplete="on" />
         <NavLinks>
-          <Link to='/email' id='fullName-next' data-testid='fullName-next' style={{visibility: props.formInputValues.fullName ? 'visible' : 'hidden' }}>Next</Link>
+          <Link to='/email' id='fullName-next' data-testid='fullName-next' className='btn-nav btn-next' style={{visibility: props.formInputValues.fullName ? 'visible' : 'visible' }}>Next</Link>
         </NavLinks>
       </Input>
   );

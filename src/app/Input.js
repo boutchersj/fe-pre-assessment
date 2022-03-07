@@ -2,7 +2,7 @@ import React from 'react';
 
 function Input(props) {
   return (
-    <div className="input-wrapper flex-column">
+    <div className={`input-wrapper ${props?.checkbox}`}>
       {props.children}
     </div>
   );

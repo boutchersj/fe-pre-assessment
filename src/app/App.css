@@ -1,26 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+
 body {
   margin: 0;
   background-color: #2f3640;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 a {
   color: white;
 }
 
-.flex-column {
+.app-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.app-wrapper {
+  justify-content: center;
   width: 100vw;
   height: 100vh;
   margin: 0;
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   justify-content: center;
   width: 100%;
@@ -29,9 +33,52 @@ a {
 }
 
 .input-wrapper {
-  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.showPasswordCheckboxWrapper {
+  width: 50%;
+  margin-top: 1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 input,select {
+  margin-top: 1em;
   width: 100%;
+}
+
+.nav-links {
+  width: 100%;
+  display: flex;
+  margin-top: 1em;
+}
+
+.btn-nav {
+  display: flex;
+  width: 5em;
+  padding: 1em;
+  border-radius: 5px;
+  margin: 0 1em;
+  text-decoration: none;
+  border: 1px solid white;
+}
+
+.btn-nav:hover, .btn-nav:focus {
+  color: black;
+  background-color: #78e08f;
+}
+
+.btn-next {
+  justify-content: center;
+}
+
+.btn-prev {
+  justify-content: center;
+}
+
+#submit {
+
 }

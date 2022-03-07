@@ -43,9 +43,9 @@ function App() {
   }
 
   return (
-    <div className="app-wrapper flex-column">
+    <div className="app-wrapper">
       <canvas id="my-canvas"></canvas>
-      <main className="content flex-column">
+      <main className="content">
         <Routes>
           <Route exact path='/' element={<FullName formInputValues={formInputValues} handleChange={handleChange} />} />
           <Route path="/email" element={<Email formInputValues={formInputValues} handleChange={handleChange} />} />

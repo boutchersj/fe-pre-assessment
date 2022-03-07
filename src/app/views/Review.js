@@ -53,9 +53,9 @@ function Review(props) {
       <p data-testid='occupation-review'>Occupation: {occupation}</p>
       <p data-testid='state-review'>State: {state}</p>
       <NavLinks>
-        <Link to='/state' className='btn-nav' data-testid='review-prev'>Previous</Link>
-        <input type='submit' className='btn-nav' onClick={submitForm} value='Submit' data-testid='submit'/>
+        <Link to='/state' className='btn-nav btn-prev' data-testid='review-prev'>Previous</Link>
       </NavLinks>
+      <input type='submit' onClick={submitForm} data-testid='submit'/>
     </section>
   )
 }
