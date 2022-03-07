@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import { FullName, Email, Password, Occupation, State, Review, Success } from './views/views';
 
@@ -36,17 +36,15 @@ function App() {
     <div className="app-wrapper flex-column">
       <canvas id="my-canvas"></canvas>
       <main className="content flex-column">
-        <Router>
-          <Routes>
-            <Route exact path='/' element={<FullName formInputValues={formInputValues} handleChange={handleChange} />} />
-            <Route path="/email" element={<Email formInputValues={formInputValues} handleChange={handleChange} />} />
-            <Route path='/password' element={<Password formInputValues={formInputValues} handleChange={handleChange} />} />
-            <Route path='/occupation' element={<Occupation formInputValues={formInputValues} handleChange={handleChange} options={occupations} />} />
-            <Route path='/state' element={<State formInputValues={formInputValues} handleChange={handleChange} options={states} />} />
-            <Route path='/review' element={<Review formInputValues={formInputValues} setWasRedirected={setWasRedirected} />} />
-            <Route path='/success' element={wasRedirected ? <Success /> : <Navigate to='/' />} />
-          </Routes>
-        </Router>
+        <Routes>
+          <Route exact path='/' element={<FullName formInputValues={formInputValues} handleChange={handleChange} />} />
+          <Route path="/email" element={<Email formInputValues={formInputValues} handleChange={handleChange} />} />
+          <Route path='/password' element={<Password formInputValues={formInputValues} handleChange={handleChange} />} />
+          <Route path='/occupation' element={<Occupation formInputValues={formInputValues} handleChange={handleChange} options={occupations} />} />
+          <Route path='/state' element={<State formInputValues={formInputValues} handleChange={handleChange} options={states} />} />
+          <Route path='/review' element={<Review formInputValues={formInputValues} setWasRedirected={setWasRedirected} />} />
+          <Route path='/success' element={wasRedirected ? <Success /> : <Navigate to='/' />} />
+        </Routes>
       </main>
     </div>
 

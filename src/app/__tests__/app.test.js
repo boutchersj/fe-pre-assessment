@@ -1,18 +1,15 @@
 // app.test.js
-import {render, screen} from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import {createMemoryHistory} from 'history'
+import { render } from '@testing-library/react'
 import React from 'react'
-import {Router} from 'react-router-dom'
+import {MemoryRouter as Router} from 'react-router-dom'
 
 import '@testing-library/jest-dom'
 
 import App from '../App'
 
 test('full app rendering/navigating', () => {
-  const history = createMemoryHistory()
   render(
-    <Router history={history}>
+    <Router initialEntries={['/']}>
       <App />
     </Router>,
   )
