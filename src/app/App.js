@@ -32,6 +32,16 @@ function App() {
     })
   }
 
+  function clearFormData() {
+    setFormInputValues({
+      fullName: '',
+      email: '',
+      password: '',
+      occupation: 'Head of Shrubbery',
+      state: 'AL'
+    })
+  }
+
   return (
     <div className="app-wrapper flex-column">
       <canvas id="my-canvas"></canvas>
@@ -42,8 +52,8 @@ function App() {
           <Route path='/password' element={<Password formInputValues={formInputValues} handleChange={handleChange} />} />
           <Route path='/occupation' element={<Occupation formInputValues={formInputValues} handleChange={handleChange} options={occupations} />} />
           <Route path='/state' element={<State formInputValues={formInputValues} handleChange={handleChange} options={states} />} />
-          <Route path='/review' element={<Review formInputValues={formInputValues} setWasRedirected={setWasRedirected} />} />
-          <Route path='/success' element={wasRedirected ? <Success /> : <Navigate to='/' />} />
+          <Route path='/review' element={<Review formInputValues={formInputValues} setWasRedirected={setWasRedirected}/>} />
+          <Route path='/success' element={wasRedirected ? <Success clearFormData={clearFormData} /> : <Navigate to='/' />} />
         </Routes>
       </main>
     </div>
