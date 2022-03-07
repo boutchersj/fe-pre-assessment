@@ -11,14 +11,14 @@ function Password(props) {
   return (
     <Input>
       <label htmlFor='password'>Password</label>
-      <input id='password-field' name='password' onChange={props.handleChange} value={props.formInputValues.password} type={passwordType} autoComplete="on" />
+      <input data-testid='password-field' name='password' onChange={props.handleChange} value={props.formInputValues.password} type={passwordType} autoComplete="on" />
       <Input>
         <label htmlFor='password-visibility-checkbox'>Show Password</label>
-        <input id='password-visibility-checkbox' name='password-visibility-checkbox' type="checkbox" onClick={changePasswordVisibility} />
+        <input data-testid='password-visibility-checkbox' name='password-visibility-checkbox' type="checkbox" onClick={changePasswordVisibility} />
       </Input>
       <NavLinks>
-        <Link to='/email' className='btn-nav'>Previous</Link>
-        <Link to='/occupation' className='btn-nav'>Next</Link>
+        <Link to='/email' className='btn-nav' data-testid='password-prev'>Previous</Link>
+        <Link to='/occupation' className='btn-nav' data-testid='password-next'>Next</Link>
       </NavLinks>
     </Input>
   );

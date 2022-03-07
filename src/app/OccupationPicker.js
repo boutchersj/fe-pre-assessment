@@ -3,11 +3,11 @@ import React from 'react';
 function OccupationPicker(props) {
   const occupationOptions = props.options.map(occupation => {
     return (
-      <option key={occupation} value={occupation}>{occupation}</option>
+      <option data-testid={occupation} key={occupation} value={occupation}>{occupation}</option>
     );
   });
   return (
-    <select name="occupation" onChange={props.handleChange} value={props.value}>
+    <select data-testid='occupation-picker' name="occupation" onChange={props.handleChange} value={props.value}>
       {occupationOptions}
     </select>		
   )

@@ -7,10 +7,10 @@ function Email(props) {
   return (
     <Input>
       <label htmlFor="email">Email</label>
-      <input id='email-field' name="email" onChange={props.handleChange} value={props.formInputValues.email} type="email" autoComplete="on" />
+      <input data-testid='email-field' name="email" onChange={props.handleChange} value={props.formInputValues.email} type="email" autoComplete="on" />
       <NavLinks>
-        <Link to='/' className='btn-nav'>Previous</Link>
-        <Link to='/password' className='btn-nav'>Next</Link>
+        <Link to='/' className='btn-nav' data-testid='email-prev'>Previous</Link>
+        <Link to='/password' className='btn-nav' data-testid='email-next'>Next</Link>
       </NavLinks>
     </Input>
   );

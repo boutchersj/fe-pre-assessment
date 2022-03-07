@@ -8,10 +8,10 @@ function Occupation(props) {
   return (
     <Input>
       <label htmlFor="occupation">Occupation</label>
-      <OccupationPicker id='occupation-field' handleChange={props.handleChange} value={props.formInputValues.occupation} options={props.options} />
+      <OccupationPicker handleChange={props.handleChange} value={props.formInputValues.occupation} options={props.options} />
       <NavLinks>
-        <Link to='/password' className='btn-nav'>Previous</Link>
-        <Link to='/state' className='btn-nav'>Next</Link>
+        <Link to='/password' className='btn-nav' data-testid='occupation-prev'>Previous</Link>
+        <Link to='/state' className='btn-nav' data-testid='occupation-next'>Next</Link>
       </NavLinks>
     </Input>
   );

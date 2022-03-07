@@ -39,16 +39,16 @@ function Review(props) {
   }
 
   return (
-    <section id='review-section'>
+    <section data-testid='review-section'>
       <h1>Please ensure your information is correct before submitting</h1>
-      <p>Full Name: {fullName}</p>
-      <p>Email: {email}</p>
-      <p>Password: {password}</p>
-      <p>Occupation: {occupation}</p>
-      <p>State: {state}</p>
+      <p data-testid='fullName-review'>Full Name: {fullName}</p>
+      <p data-testid='email-review'>Email: {email}</p>
+      <p data-testid='password-review'>Password: {password}</p>
+      <p data-testid='occupation-review'>Occupation: {occupation}</p>
+      <p data-testid='state-review'>State: {state}</p>
       <NavLinks>
-        <Link to='/state' className='btn-nav'>Previous</Link>
-        <input type='submit' className='btn-nav' onClick={submitForm} value='Submit' />
+        <Link to='/state' className='btn-nav' data-testid='review-prev'>Previous</Link>
+        <input type='submit' className='btn-nav' onClick={submitForm} value='Submit' data-testid='submit'/>
       </NavLinks>
     </section>
   )
