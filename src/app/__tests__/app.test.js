@@ -1,13 +1,10 @@
 // app.test.js
-import { render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import React from 'react'
-import {MemoryRouter as Router} from 'react-router-dom'
-
-import '@testing-library/jest-dom'
-
-import App from '../App'
-import { wait } from '@testing-library/user-event/dist/utils'
+import '@testing-library/jest-dom';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import React from 'react';
+import {MemoryRouter as Router} from 'react-router-dom';
+import App from '../App';
 
 test('Happy path', () => {
   
@@ -68,9 +65,13 @@ test('Happy path', () => {
   expect(state).toHaveTextContent('State: AL');
 
   // Submit the Form
-  // const submitButton = screen.getByTestId('submit');
-  // userEvent.click(submitButton);
-  // waitFor(() => expect(screen.getByTestId('success-message').toBeInTheDocument(), { timeout: 3000 }))
-
-  // Return to Beginning of Form (Full Name)
+  const submitButton = screen.getByTestId('submit');
+  userEvent.click(submitButton);
+  waitFor(() => {
+    expect(screen.getByTestId('success-message')).toBeInTheDocument();
+      // Return to Beginning of Form (Full Name)
+      const restartButton = screen.getByTestId('restart');
+      userEvent.click(restartButton);
+      expect(fullNameField).toBeInTheDocument();
+  }, { timeout: 3000 });
 })
