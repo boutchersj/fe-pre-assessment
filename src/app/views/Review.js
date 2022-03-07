@@ -28,7 +28,9 @@ function Review(props) {
       "state": props.formInputValues.state
     };
 
-    axios.post('https://frontend-take-home.fetchrewards.com/form', formData)
+    const { fullName, email, password, occupation, state } = props.formInputValues;
+    if (fullName && email && password && occupation && state) {
+      axios.post('https://frontend-take-home.fetchrewards.com/form', formData)
       .then((res) => {
         console.log(res);
         props.setWasRedirected(true);
@@ -36,6 +38,10 @@ function Review(props) {
         successRedirect();
       })
       .catch((err) => { console.log(err) });
+    }
+    else {
+      alert('Please ensure every field has a value prior to submission.')
+    }
   }
 
   return (
