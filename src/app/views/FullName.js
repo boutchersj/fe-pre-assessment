@@ -8,7 +8,7 @@ function FullName(props) {
       <Input>
         <label htmlFor="fullName">Full Name</label>
         <input data-testid='fullName-field' name="fullName" onChange={props.handleChange} value={props.formInputValues.fullName} type="text" autoComplete="on" autoFocus />
-        <NavLinks>
+        <NavLinks firstPageStyles={{ justifyContent: 'flex-end' }}>
           <Link to='/email' id='fullName-next' data-testid='fullName-next' className='btn-nav btn-next' style={{visibility: props.formInputValues.fullName ? 'visible' : 'visible' }}>Next</Link>
         </NavLinks>
       </Input>
