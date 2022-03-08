@@ -19,8 +19,8 @@ function Password(props) {
       </div>
 
       <NavLinks>
-        <Link to='/occupation' className='btn-nav btn-next' data-testid='password-next' style={{visibility: props.formInputValues.password ? 'visible' : 'visible' }}>Next</Link>
-        <Link to='/email' className='btn-nav btn-prev' data-testid='password-prev' style={{visibility: props.formInputValues.password ? 'visible' : 'visible' }}>Previous</Link>
+        <Link to='/occupation' className='btn-nav btn-next' data-testid='password-next' style={{visibility: props.formInputValues.password ? 'visible' : 'hidden' }}>Next</Link>
+        <Link to='/email' className='btn-nav btn-prev' data-testid='password-prev' style={{visibility: props.formInputValues.password ? 'visible' : 'hidden' }}>Previous</Link>
       </NavLinks>
     </Input>
   );
