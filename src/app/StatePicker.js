@@ -7,7 +7,7 @@ function StatePicker(props) {
     );
   });
   return (
-    <select data-testid='state-picker' name="state" onChange={props.handleChange} value={props.value}>
+    <select data-testid='state-picker' name="state" onChange={props.handleChange} value={props.value} autoFocus>
       {stateOptions}
     </select>		
   )

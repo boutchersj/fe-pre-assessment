@@ -7,7 +7,7 @@ function OccupationPicker(props) {
     );
   });
   return (
-    <select data-testid='occupation-picker' name="occupation" onChange={props.handleChange} value={props.value}>
+    <select data-testid='occupation-picker' name="occupation" onChange={props.handleChange} value={props.value} autoFocus>
       {occupationOptions}
     </select>		
   )

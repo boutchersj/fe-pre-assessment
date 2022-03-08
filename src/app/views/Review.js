@@ -52,10 +52,10 @@ function Review(props) {
       <p data-testid='password-review'>Password: {password}</p>
       <p data-testid='occupation-review'>Occupation: {occupation}</p>
       <p data-testid='state-review'>State: {state}</p>
+      <input id='submit' type='submit' onClick={submitForm} data-testid='submit' autoFocus />
       <NavLinks>
         <Link to='/state' className='btn-nav btn-prev' data-testid='review-prev'>Previous</Link>
       </NavLinks>
-      <input type='submit' onClick={submitForm} data-testid='submit'/>
     </section>
   )
 }
