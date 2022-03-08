@@ -10,4 +10,4 @@ Go to https://boutchersj.github.io/fe-assessment/
 2. Clone it using 'git clone https://github.com/boutchersj/fe-assessment.git'
 3. Install dependencies using the 'yarn'
 4. Start the project locally using 'yarn start'
-5. Run the tests to show they pass using 'yarn test' (this runs all tests by default)
+5. Run the E2E test to show it passes using 'yarn test'
