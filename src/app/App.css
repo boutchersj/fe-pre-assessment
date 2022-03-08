@@ -74,10 +74,10 @@ input,select {
 .nav-links {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.btn-nav {
+.btn-nav, #submit {
   display: flex;
   width: 5em;
   padding: 1em;
@@ -88,11 +88,11 @@ input,select {
 }
 
 .btn-nav:hover, .btn-nav:focus {
-  color: black;
   background-color: #78e08f;
+  color: black;
 }
 
-.btn-next {
+.btn-next, #submit {
   justify-content: center;
   order: 2;
 }
@@ -103,5 +103,30 @@ input,select {
 }
 
 #submit {
-  margin: 1em 0;
+  background-color: #78e08f;
+  color: black;
+}
+
+#submit:hover, #submit:focus {
+  background-color: black;
+  color: #78e08f;
+}
+
+#success-view {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#success-message {
+  width: 50%;
+  text-align: center;
+}
+
+#restart {
+  width: 50%;
+  justify-content: center;
+  background-color: #b71540;
 }
