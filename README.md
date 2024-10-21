@@ -2,7 +2,7 @@
 
 ## The Hosted Version
 
-Go to https://boutchersj.github.io/fe-assessment/
+Go to https://steven-the-qa.github.io/fe-assessment/
 
 ## The Local Version
 
